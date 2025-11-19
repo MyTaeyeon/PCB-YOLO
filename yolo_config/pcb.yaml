@@ -1,0 +1,30 @@
+path: ./data  # base path trong repo
+train: data/train/images/
+val: data/val/images/
+test: data/test/images/
+
+nc: 6
+names: ['mouse_bite', 'spur', 'missing_hole', 'short', 'open_circuit', 'spurious_copper']
+
+augmentations:
+  albumentations:
+    - RandomBrightnessContrast:
+        brightness_limit: 0.2
+        contrast_limit: 0.2
+        p: 0.6
+    - RandomGamma:
+        p: 0.5
+    - CLAHE:
+        p: 0.3
+    - MotionBlur:
+        blur_limit: 3
+        p: 0.2
+    - GaussNoise:
+        var_limit: [10, 50]
+        p: 0.3
+    - ShiftScaleRotate:
+        shift_limit: 0.03
+        scale_limit: 0.15
+        rotate_limit: 10
+        border_mode: 0
+        p: 0.5

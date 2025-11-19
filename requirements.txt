@@ -1,0 +1,14 @@
+python>=3.8
+torch
+opencv-python
+ultralytics
+albumentations
+pandas
+numpy
+onnx
+onnxruntime
+fastapi
+uvicorn
+tqdm
+labelme
+tensorboard
